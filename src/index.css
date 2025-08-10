@@ -1,13 +1,65 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --accent: #0d6efd;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: #f6f7fb;
+}
+
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--accent);
+    width: 0;
+    z-index: 1200;
+}
+
+.hero {
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, rgba(13, 110, 253, 0.85), rgba(16, 185, 129, 0.85)), url('/hero.jpg') center/cover no-repeat; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 2.6rem;
+}
+
+.hero p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+section {
+    padding: 60px 0;
+}
+
+.team-member img {
+    border-radius: 50%;
+    transition: transform .25s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.06);
+}
+
+@media (max-width:768px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
 }
