@@ -212,9 +212,9 @@ small,
     border-color: #2c3e50 !important;
 }
 
-.navbar.navbar-light .navbar-toggler-icon {
+/* .navbar.navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 62, 80, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
+} */
 
 /* Navbar on dark backgrounds */
 .navbar.navbar-dark .nav-link {
@@ -233,9 +233,9 @@ small,
     border-color: #ffffff !important;
 }
 
-.navbar.navbar-dark .navbar-toggler-icon {
+/* .navbar.navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
+} */
 
 /* Job Categories */
 .category-card {
@@ -635,4 +635,127 @@ footer {
     .job-card .readmore-button {
         bottom: 0.75rem;
     }
+}
+
+/* Job Gallery Marquee */
+:root {
+    --gallery-image-height: 200px;
+    --marquee-gap: 12px;
+}
+
+.gallery-marquee {
+    position: relative;
+    overflow: hidden;
+    height: var(--gallery-image-height);
+}
+
+.gallery-marquee .marquee-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gallery-marquee .marquee-track {
+    display: flex;
+    gap: var(--marquee-gap);
+    height: 100%;
+    will-change: transform;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.gallery-marquee img.marquee-image {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    flex: 0 0 auto;
+}
+
+/* Single track duplicated content scroll */
+.gallery-marquee.marquee-left .marquee-track {
+    animation-name: marquee-left-single;
+}
+
+.gallery-marquee.marquee-right .marquee-track {
+    animation-name: marquee-right-single;
+}
+
+@keyframes marquee-left-single {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-right-single {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Pause on hover */
+.gallery-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Hover overlay for each image */
+.marquee-item {
+    position: relative;
+    flex: 0 0 auto;
+    height: 100%;
+}
+
+.marquee-item .marquee-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(128, 225, 252, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .25s ease;
+    border-radius: 8px;
+}
+
+.marquee-item:hover .marquee-overlay {
+    opacity: 1;
+}
+
+.marquee-item .overlay-content {
+    text-align: center;
+    color: #0b1e2d;
+    padding: 0 10px;
+}
+
+.marquee-item .overlay-content .btn {
+    background: #fff;
+    color: #0b1e2d;
+    border: none;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --gallery-image-height: 150px;
+    }
+}
+
+.career-tips-readmore {
+    bottom: -5px;
+    right: 5%;
+    border-radius: 10px 10px 0 0;
+    padding: 5px;
+    background-color: var(--white);
+    border: none;
 }

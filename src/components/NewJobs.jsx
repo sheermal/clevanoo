@@ -32,7 +32,7 @@ const NewJobs = () => {
   ];
 
   return (
-    <section className="py-5 text-white position-relative" style={{ backgroundColor: '#2c3e50' }}>
+    <section className="pb-5 text-white position-relative" style={{ backgroundColor: '#2c3e50' }}>
       <div
         className="position-absolute w-100 h-100"
         style={{
@@ -44,51 +44,51 @@ const NewJobs = () => {
         }}
       ></div>
 
-      <div className="container position-relative" style={{ zIndex: 1 }}>
+      <div className="container position-relative pt-5" style={{ zIndex: 1 }}>
         <div className="row">
           <div className="col-lg-12">
             <div className="col-lg-6 mb-5" data-aos="fade-right">
               <h2 className="display-5 fw-bold mb-4">New & Random Jobs</h2>
               <p className="lead mb-4">
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                The point of using Lorem Ipsum is that it has a more or less normal distribution of letters, as opposed to using 'Content here,
-                content here', making it look like readable English.
+                It is a long established fact that a reader will be distracted by the readable content of a page then looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less.
               </p>
-              <button className="btn btn-light btn-lg px-4">READ MORE</button>
+              <button className="btn btn-light btn-lg px-4 rounded-0">READ MORE</button>
             </div>
           </div>
 
           <div className="col-lg-12" data-aos="fade-left">
             <h2 className="display-5 fw-bold mb-4 text-center">Latest Job Listing</h2>
-            <div className="row g-4">
+            <div className="row">
               {jobListings.map((job, index) => (
-                <div key={index} className="col-4">
-                  <div className="card border-0 shadow h-100">
-                    <div className="card-body p-4">
-                      <div className="d-flex align-items-center mb-3">
-                        <div
+                <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                  <div className="m-2">
+                    <div className="card border-0 shadow h-100">
+                      <div className="card-body p-4 d-flex flex-column justify-content-between">
+                        <div className="d-flex align-items-center mb-3">
+                          {/* <div
                           className="rounded-circle me-3"
                           style={{
                             width: '50px',
                             height: '50px',
                             background: 'linear-gradient(45deg, #007bff, #28a745, #ffc107, #dc3545)'
                           }}
-                        ></div>
-                        <div>
-                          <h6 className="mb-1 fw-bold text-dark">{job.company}</h6>
-                          <p className="mb-0 text-primary fw-bold">{job.position}</p>
+                        ></div> */}
+                          <div>
+                            <h6 className="mb-1 fw-bold text-dark">{job.position}</h6>
+                            {/* <p className="mb-0 text-primary fw-bold">{job.position}</p> */}
+                          </div>
                         </div>
+                        <p className="card-text text-muted mb-3">{job.description}</p>
+                        <ul className="list-unstyled mb-3">
+                          {job.requirements.map((req, reqIndex) => (
+                            <li key={reqIndex} className="mb-2">
+                              <i className="fas fa-check text-success me-2"></i>
+                              <small className="text-muted">{req}</small>
+                            </li>
+                          ))}
+                        </ul>
+                        <button className="btn btn-primary btn-sm rounded-0">READ MORE</button>
                       </div>
-                      <p className="card-text text-muted mb-3">{job.description}</p>
-                      <ul className="list-unstyled mb-3">
-                        {job.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="mb-2">
-                            <i className="fas fa-check text-success me-2"></i>
-                            <small className="text-muted">{req}</small>
-                          </li>
-                        ))}
-                      </ul>
-                      <button className="btn btn-primary btn-sm">READ MORE</button>
                     </div>
                   </div>
                 </div>

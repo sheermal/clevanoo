@@ -15,7 +15,7 @@ const HomePage = () => (
     <JobGallery />
     <CareerTips />
     <Testimonials />
-    <Subscription />
+    {/* <Subscription /> */}
   </>
 );
 

@@ -11,7 +11,7 @@ const Testimonials = () => {
     {
       name: "Sarah Johnson",
       title: "Senior Developer",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
       text: "I was able to transition into a new role within weeks. The platform's user experience and job recommendations are outstanding."
     },
     {
@@ -25,48 +25,49 @@ const Testimonials = () => {
   return (
     <section className="py-5 bg-light">
       <div className="container">
-        <div className="text-center mb-5">
-          <button className="btn btn-primary rounded-pill px-4 py-2 mb-3">
-            Testimonials
-          </button>
-          <h2 className="display-6 fw-bold text-dark mb-3">Happy Candidates Say About Us</h2>
-          <p className="lead text-muted">
-            Find your dream jobs. Carefully crafted after analyzing the needs of different industries.
-          </p>
-        </div>
-        
         <div className="row align-items-center">
-          <div className="col-lg-6 mb-5" data-aos="fade-right">
+          <div className="col-lg-5 mb-5" data-aos="fade-right">
             <div className="text-center">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              <img
+                src="/assets/images/testimonials.png"
                 alt="Happy Candidate"
-                className="img-fluid rounded shadow-lg"
+                className="img-fluid rounded"
                 style={{ maxWidth: '400px' }}
               />
             </div>
           </div>
-          
-          <div className="col-lg-6" data-aos="fade-left">
-            <div className="testimonials-container">
+
+          <div className="col-lg-7" data-aos="fade-left">
+            <div className="mb-5">
+              <button className="btn border-button-design-black text-black px-4 py-2 mb-3">
+                Testimonials
+              </button>
+              <h2 className="display-6 fw-bold text-dark mb-3 text-start">Happy Candidates Say About Us</h2>
+              <p className="lead text-muted text-start">
+                Find your dream jobs. Carefully crafted after analyzing the needs of different industries.
+              </p>
+            </div>
+            <div className="testimonials-container d-flex flex-row">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="card border-0 shadow-sm mb-4">
-                  <div className="card-body p-4">
-                    <div className="d-flex align-items-center mb-3">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="rounded-circle me-3"
-                        width="50"
-                        height="50"
-                        style={{ objectFit: 'cover' }}
-                      />
-                      <div>
-                        <h6 className="mb-1 fw-bold">{testimonial.name}</h6>
-                        <p className="mb-0 text-muted small">{testimonial.title}</p>
+                <div key={index} className="col-9">
+                  <div className="card border-0 shadow-sm mb-4 h-100 me-3">
+                    <div className="card-body p-4">
+                      <div className="d-flex align-items-center mb-3">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="rounded-circle me-3"
+                          width="50"
+                          height="50"
+                          style={{ objectFit: 'cover' }}
+                        />
+                        <div>
+                          <h6 className="mb-1 fw-bold">{testimonial.name}</h6>
+                          <p className="mb-0 text-muted small">{testimonial.title}</p>
+                        </div>
                       </div>
+                      <p className="card-text text-muted">{testimonial.text}</p>
                     </div>
-                    <p className="card-text text-muted">{testimonial.text}</p>
                   </div>
                 </div>
               ))}

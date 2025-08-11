@@ -11,11 +11,11 @@ const Footer = () => {
             <div className="mb-4">
               <h3 className="fw-bold mb-3">LOGO</h3>
               <p className="mb-3">Share your resume, We'll quickly match you</p>
-              <div className="mb-2">
+              {/* <div className="mb-2">
                 <strong>Address:</strong> about
-              </div>
+              </div> */}
               <div className="mb-2">
-                <strong>Email:</strong> example@domain.com
+                <strong>Email:</strong> <a href="mailto:info@clevanoollc.com">info@clevanoollc.com</a>
               </div>
               <div className="mb-2">
                 <strong>Call:</strong> 555-555-1234
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
 
           {/* For Candidate Column */}
-          <div className="col-lg-3 col-md-6">
+          {/* <div className="col-lg-3 col-md-6">
             <h5 className="fw-bold mb-3">For Candidate</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
@@ -43,10 +43,10 @@ const Footer = () => {
                 <Link to="/blog-grid-2" className="text-white text-decoration-none">Blog Grid-2</Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* For Employers Column */}
-          <div className="col-lg-3 col-md-6">
+          {/* <div className="col-lg-3 col-md-6">
             <h5 className="fw-bold mb-3">For Employers</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
@@ -65,7 +65,7 @@ const Footer = () => {
                 <Link to="/blog-grid" className="text-white text-decoration-none">Blog Grid</Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Helpful Resources Column */}
           <div className="col-lg-3 col-md-6">
@@ -94,20 +94,20 @@ const Footer = () => {
         <div className="border-top border-light pt-4 mt-4">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <p className="mb-0">Copyright © 2004 All rights reserved</p>
+              <p className="mb-0">Copyright © 2005 All rights reserved</p>
             </div>
             <div className="col-md-6 text-md-end">
               <div className="social-icons">
-                <a href="#" className="text-white me-3 fs-5">
+                <a href="https://www.facebook.com/profile.php?id=61578889364876" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5">
                   <i className="fab fa-facebook"></i>
                 </a>
-                <a href="#" className="text-white me-3 fs-5">
-                  <i className="fab fa-twitter"></i>
+                <a href="https://x.com/clevanoo44085" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5">
+                  <i className="fab fa-x"></i>
                 </a>
-                <a href="#" className="text-white me-3 fs-5">
+                <a href="https://www.linkedin.com/company/108140372/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5">
                   <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="#" className="text-white fs-5">
+                <a href="https://www.instagram.com/clevanoollc/" target="_blank" rel="noopener noreferrer" className="text-white fs-5">
                   <i className="fab fa-instagram"></i>
                 </a>
               </div>
