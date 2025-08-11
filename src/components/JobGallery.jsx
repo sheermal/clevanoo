@@ -1,21 +1,25 @@
 import React from "react";
 
 const JobGallery = () => {
-  const galleryImages = [
-    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518600506278-4e8ef466b810?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop"
+  const galleryImagesTop = [
+    "/assets/images/1.png",
+    "/assets/images/2.png",
+    "/assets/images/3.png",
+    "/assets/images/4.png",
+    "/assets/images/5.png",
   ];
 
-  const Track = () => (
+  const galleryImagesBottom = [
+    "/assets/images/6.png",
+    "/assets/images/7.png",
+    "/assets/images/8.png",
+    "/assets/images/9.png",
+    "/assets/images/10.png",
+  ];
+
+  const Track = ({ images }) => (
     <div className="marquee-track">
-      {[...galleryImages, ...galleryImages].map((image, index) => (
+      {[...images, ...images].map((image, index) => (
         <div className="marquee-item" key={index}>
           <img src={image} alt={`Professional ${index + 1}`} className="marquee-image" />
           <div className="marquee-overlay">
@@ -37,17 +41,17 @@ const JobGallery = () => {
         </div>
 
         <div className="position-relative">
-          {/* Top row - scroll right */}
+          {/* Top row - scroll right with top images */}
           <div className="gallery-marquee marquee-right mb-4">
             <div className="marquee-viewport">
-              <Track />
+              <Track images={galleryImagesTop} />
             </div>
           </div>
 
-          {/* Bottom row - scroll left */}
+          {/* Bottom row - scroll left with bottom images */}
           <div className="gallery-marquee marquee-left mt-4">
             <div className="marquee-viewport">
-              <Track />
+              <Track images={galleryImagesBottom} />
             </div>
           </div>
 
