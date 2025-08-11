@@ -1,34 +1,41 @@
 import React from "react";
-import Typewriter from "typewriter-effect";
 
 const Hero = () => {
-  const scrollToAbout = (e) => {
-    e?.preventDefault();
-    const about = document.getElementById("about");
-    if (!about) return;
-    about.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <section
       id="hero"
-      className="hero d-flex align-items-center text-center text-white"
+      className="hero d-flex align-items-center text-white position-relative"
+      style={{
+        backgroundImage: 'url("./assets/images/hero-bg.svg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        paddingTop: '80px'
+      }}
     >
-      <div className="container" data-aos="zoom-in">
-        <h1 className="display-5 fw-bold">
-          <Typewriter
-            options={{
-              strings: ["Welcome to Our Website"],
-              autoStart: true,
-              loop: false,
-              delay: 60,
-            }}
-          />
-        </h1>
-        <p className="lead">Your success starts here.</p>
-        <button className="btn btn-primary btn-lg mt-3" onClick={scrollToAbout}>
-          Learn More
-        </button>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6" data-aos="fade-right">
+            <div className="hero-content">
+              <div className="job-count mb-3">
+                <span className="border-button-design px-3 py-2 fs-6">
+                  WE HAVE 500+ LIVE JOBS
+                </span>
+              </div>
+              <h1 className="display-4 fw-bold mb-4">
+                We find the talent, <br /><span className="text-border-white">you lead</span> the innovation
+              </h1>
+              <p className="lead mb-4">
+                We bridge the gap between top tier IT professionals and forward thinking companies, 
+                creating partnerships that fuel digital transformation and lasting competitive advantage.
+              </p>
+              <button className="btn btn-lg px-4 py-3 text-white pill-button-design">
+                <span className="rounded-pill"></span>
+                <span className="btn-text">Find Out More</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
