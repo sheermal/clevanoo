@@ -11,25 +11,25 @@ const Subscription = () => {
   };
 
   return (
-    <section className="py-5 text-white position-relative" style={{ backgroundColor: '#2c3e50' }}>
-      <div 
+    <section className="text-white position-relative" style={{ backgroundColor: '#2c3e50' }}>
+      <div
         className="position-absolute w-100 h-100"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+          backgroundImage: 'url("/assets/images/subscribe.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(3px) brightness(0.3)',
+          filter: 'blur(3px)',
           zIndex: 0
         }}
       ></div>
-      
-      <div className="container position-relative" style={{ zIndex: 1 }}>
+
+      <div className="container position-relative py-5" style={{ zIndex: 1 }}>
         <div className="text-center">
           <h2 className="display-5 fw-bold mb-4">Subscribe now for job updates and alerts</h2>
           <p className="lead mb-5">
             Find your dream jobs. Carefully crafted after analyzing the needs of different industries.
           </p>
-          
+
           <div className="row justify-content-center">
             <div className="col-lg-6 col-md-8">
               <form onSubmit={handleSubmit} className="d-flex gap-3">

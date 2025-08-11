@@ -3,28 +3,28 @@ import React from "react";
 const JobCategories = () => {
   const categories = [
     {
-      icon: "fas fa-cubes",
+      icon: "/assets/images/af.png",
       title: "Accounting / Finance",
       description: "Find your dream job in accounting and finance sector with top companies.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      image: "/assets/images/accounting-finance.png"
     },
     {
-      icon: "fas fa-briefcase",
+      icon: "/assets/images/t.png",
       title: "Technology",
       description: "Explore exciting opportunities in the ever-evolving tech industry.",
-      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      image: "/assets/images/technology.png"
     },
     {
-      icon: "fas fa-user",
+      icon: "/assets/images/tc.png",
       title: "Tele-communications",
       description: "Connect with leading telecom companies and advance your career.",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      image: "/assets/images/tele-communications.png"
     },
     {
-      icon: "fas fa-chart-line",
+      icon: "/assets/images/h.png",
       title: "Healthcare",
       description: "Make a difference in healthcare with rewarding career opportunities.",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+      image: "/assets/images/healthcare.png"
     }
   ];
 
@@ -47,7 +47,13 @@ const JobCategories = () => {
               <div className="card h-100 border-system-gray job-card">
                 <div className="card-body text-center p-4">
                   <div className="mb-3 d-flex flex-row align-items-center justify-content-start">
-                    <i className={`${category.icon} fa-2x text-primary`}></i>
+                    {/* <i className={`${category.icon} fa-2x text-primary`}></i> */}
+                    <img
+                      src={category.icon}
+                      className="rounded-circle"
+                      width="50"
+                      height="50" alt=""
+                    />
                   </div>
                   <div className="mb-3 d-flex flex-row align-items-center justify-content-between">
                     <hr style={{ height: '1px', width: '65%' }} />
@@ -72,7 +78,7 @@ const JobCategories = () => {
           ))}
         </div>
 
-        <div className="text-center mt-5">
+        {/* <div className="text-center mt-5">
           <div className="d-flex justify-content-center gap-2">
             {[1, 2, 3, 4, 5].map((dot) => (
               <div
@@ -87,7 +93,7 @@ const JobCategories = () => {
               ></div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
